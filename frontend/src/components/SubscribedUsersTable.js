@@ -46,6 +46,7 @@ export default class SubscribedUsersTable extends Component {
                         {
                             this.state.email.map((emails) =>
                                 <SubscribedUsersTableData
+                                    key= {emails.id}
                                     id= {emails.id}
                                     email = {emails.emails}
                                 />
