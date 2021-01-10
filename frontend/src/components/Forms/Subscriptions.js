@@ -35,16 +35,16 @@ export default class Subscriptions extends Component {
         instance.post('/core/subscribers/',data)
             .then(res=>{
                 console.log(res);
+                if(res.data.emails) {
+                    this.setState({
+                        success: "Thank You for Subscribing!!",
+                        error: ''
+                    })
+                }
                 if(res.data.error){
                     this.setState({
                         error: "Email already subscribed",
                         success: ''
-                    })
-                }
-                else {
-                    this.setState({
-                        success: "Thank You for Subscribing!!",
-                        error: ''
                     })
                 }
             })
@@ -52,7 +52,7 @@ export default class Subscriptions extends Component {
 
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                 <Form.Row className="justify-content-center mb-3">
                     <Col xs="auto">
                         <h4>Subscribe to our Newsletter</h4>
@@ -74,7 +74,7 @@ export default class Subscriptions extends Component {
                     </Form.Group>
                     </Col>
                     <Col xs="auto">
-                    <Button type="submit" className="mb-2" onClick={this.handleSubmit}>
+                    <Button type="submit" className="mb-2">
                         Submit
                     </Button>
                     </Col>
