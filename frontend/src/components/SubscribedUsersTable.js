@@ -31,24 +31,29 @@ export default class SubscribedUsersTable extends Component {
 
     render() {
         return (
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Subscribed Email </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        this.state.email.map((emails) =>
-                            <SubscribedUsersTableData
-                                id= {emails.id}
-                                email = {emails.emails}
-                            />
-                        )
-                    }
-                </tbody>
-            </Table>
+            <>
+                <div className="text-center mb-4">
+                    <h4>Subscribers</h4>
+                </div>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Subscribed Email </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.email.map((emails) =>
+                                <SubscribedUsersTableData
+                                    id= {emails.id}
+                                    email = {emails.emails}
+                                />
+                            )
+                        }
+                    </tbody>
+                </Table>
+            </>
         )
     }
 }
