@@ -6,6 +6,7 @@ export default class SucscribedUsersTableData extends Component {
             <tr>
                 <td>{this.props.id}</td>
                 <td>{this.props.email}</td>
+                <td>{this.props.age}</td>
             </tr>
         )
     }
