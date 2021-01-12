@@ -1,3 +1,8 @@
 .App {
   padding-top: 50px;
 }
+
+.form-submit-button {
+  background-color: red !important;
+  border-color: red !important;
+}

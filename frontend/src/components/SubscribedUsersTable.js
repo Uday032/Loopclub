@@ -40,6 +40,7 @@ export default class SubscribedUsersTable extends Component {
                         <tr>
                             <th>Id</th>
                             <th>Subscribed Email </th>
+                            <th>Age</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +50,7 @@ export default class SubscribedUsersTable extends Component {
                                     key= {emails.id}
                                     id= {emails.id}
                                     email = {emails.emails}
+                                    age={emails.age}
                                 />
                             )
                         }
